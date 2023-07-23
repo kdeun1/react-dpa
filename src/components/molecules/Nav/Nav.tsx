@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import { NavWrapper, Logo } from './styles' ; 
 
 const Nav = () => {
-
   const NAV_HEIGHT_PX = 50;
   const [show, setShow] = useState<boolean>(false);
 
@@ -34,4 +33,4 @@ const Nav = () => {
   )
 }
 
-export default Nav
+export default Nav;
