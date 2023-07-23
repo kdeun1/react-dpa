@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 interface NavWarpperProps {
-  show?: boolean;
+  $show?: boolean;
 }
 
 const NavWrapper = styled.nav<NavWarpperProps>`
@@ -10,7 +10,7 @@ const NavWrapper = styled.nav<NavWarpperProps>`
   left: 0;
   right: 0;
   height: 70px;
-  background-color: ${props => (props.show ? '#090b13' : 'transparent')};
+  background-color: ${props => (props.$show ? '#090b13' : 'transparent')};
   display: flex;
   justify-content: space-between;
   align-items: center;
