@@ -1,5 +1,5 @@
 import './App.css';
-import Nav from './components/molecules/Nav/Nav';
+import Nav from '@components/molecules/Nav/Nav';
 import styled from 'styled-components';
 
 const Container = styled.main`

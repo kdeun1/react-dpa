@@ -2,6 +2,11 @@
   "compilerOptions": {
     "target": "es5",
     "baseUrl": "src",
+    "paths": {
+      "@/*": ["./*"],
+      "@components/*": ["components/*"],
+      "@api/*": ["api/*"],
+    },
     "lib": [
       "dom",
       "dom.iterable",
@@ -28,7 +33,7 @@
   "include": [
     "*.d.ts",
     "**/*.ts",
-    "**/*.tsx", "src/components/molecules/Nav/styles.js",
+    "**/*.tsx",
   ],
   "exclude": [
     "node_modules"
