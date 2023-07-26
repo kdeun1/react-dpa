@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { NavWrapper, Logo } from './styles' ; 
+import * as S from './styles' ; 
 
 const Nav = () => {
   const NAV_HEIGHT_PX = 50;
@@ -21,15 +21,15 @@ const Nav = () => {
   }, []);
 
   return (
-    <NavWrapper $show={show}>
-      <Logo>
+    <S.NavWrapper $show={show}>
+      <S.Logo>
         <img
           alt="Disney Plus Logo"
           src="/images/logo.svg"
           onClick={() => (window.location.href = "/")}
         />
-      </Logo>
-    </NavWrapper>
+      </S.Logo>
+    </S.NavWrapper>
   )
 }
 

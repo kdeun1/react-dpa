@@ -1,6 +1,7 @@
 import './App.css';
-import Nav from '@components/molecules/Nav/Nav';
 import styled from 'styled-components';
+import Nav from '@components/molecules/Nav/Nav';
+import Banner from '@components/molecules/Banner/Banner';
 
 const Container = styled.main`
   position: relative;
@@ -24,6 +25,7 @@ const App = () => {
   return (
     <Container>
       <Nav />
+      <Banner />
     </Container>
   );
 }
