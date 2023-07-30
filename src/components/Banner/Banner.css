@@ -82,7 +82,7 @@
 
 .banner__button {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   cursor: pointer;
   outline: none;
@@ -103,8 +103,6 @@
   background-color: white;
   color: black;
 }
-
-
 
 .element {
   inset: 1em 2em 3em 0;

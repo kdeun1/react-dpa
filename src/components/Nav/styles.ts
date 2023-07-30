@@ -33,4 +33,7 @@ const Logo = styled.a`
   }
 `;
 
-export { NavWrapper, Logo };
+export {
+  NavWrapper,
+  Logo,
+};

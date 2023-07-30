@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
-import * as S from './styles' ; 
+import * as S from './styles'; 
+import NavSearch from '../NavSearch/NavSearch';
 
-const Nav = () => {
+const NavIcon = () => {
   const NAV_HEIGHT_PX = 50;
   const [show, setShow] = useState<boolean>(false);
 
@@ -29,8 +30,10 @@ const Nav = () => {
           onClick={() => (window.location.href = "/")}
         />
       </S.Logo>
+
+      <NavSearch />
     </S.NavWrapper>
   )
 }
 
-export default Nav;
+export default NavIcon;

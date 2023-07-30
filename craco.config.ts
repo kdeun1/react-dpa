@@ -11,6 +11,7 @@ module.exports = {
               '@': './src',
               '@api': './src/api',
               '@components': './src/components',
+              '@pages': './src/pages',
             }
         }
     }
