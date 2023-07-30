@@ -1,36 +1,8 @@
 import { useState, useEffect } from 'react'
 import './Banner.css';
-import axiosInstance from '@/api/axios';
-import requests from '@/api/request';
 import { truncate } from '@/utils';
-
-interface MovieInfo {
-  adult: boolean;
-  backdrop_path: string;
-  belongs_to_collection: unknown;
-  budget: number;
-  genres: { id: number; name: string }[];
-  homepage: string;
-  id: number;
-  imdb_id: string;
-  original_language: string;
-  original_title: string;
-  overview: string;
-  popularity: number;
-  poster_path: string;
-  production_companies: any[];
-  production_countries: any[];
-  release_date: string;
-  revenue: number;
-  runtime: number;
-  spoken_languages: any[];
-  status: string;
-  tagline: string;
-  title: string;
-  video: boolean;
-  vote_average: number;
-  vote_count: number;
-}
+import { getMovieDetailsApi } from '@/api/movies';
+import { getMovieNowPlayingApi } from '@/api/movieLists';
 
 const Banner = () => {
   const [movie, setMovie] = useState<any>();
@@ -40,13 +12,14 @@ const Banner = () => {
   }, [])
 
   const fetchData = async () => {
-    const { data } = await axiosInstance.get(requests.fetchNowPlaying);
+    const { data } = await getMovieNowPlayingApi();
     const results: any[] = data?.results || [];
     const randomMovieId = results[Math.floor(Math.random() * results.length)]?.id;
 
-    const { data: movieDetail } = await axiosInstance.get(`movie/${randomMovieId}`, {
-      params: { append_to_response: 'movie' }
-    })
+    const { data: movieDetail } = await getMovieDetailsApi(
+      randomMovieId,
+      { append_to_response: 'movie' }
+    );
     setMovie(movieDetail);
   }
   
