@@ -25,24 +25,24 @@ const Banner = () => {
   
   return (
     <header
-        className='banner'
-        style={movie?.backdrop_path && {
-          backgroundImage: `url("https://image.tmdb.org/t/p/original/${movie.backdrop_path}")`,
-          backgroundPosition: "top center",
-          backgroundSize: "cover"
-        }}
-      >
-        <div style={{ fontSize: 10 }} className='banner__contents'>
-          <h1 className='banner__title'>
-            {movie?.title || movie?.name || movie?.original_name}
-          </h1>
+      className='banner'
+      style={movie?.backdrop_path && {
+        backgroundImage: `url("https://image.tmdb.org/t/p/original/${movie.backdrop_path}")`,
+        backgroundPosition: "top center",
+        backgroundSize: "cover"
+      }}
+    >
+      <div style={{ fontSize: 10 }} className='banner__contents'>
+        <h1 className='banner__title'>
+          {movie?.title || movie?.name || movie?.original_name}
+        </h1>
 
-          <p className='banner__description'>
-            { movie?.overview ? truncate(movie.overview, 100) : ''}
-          </p>
-        </div>
-        <div className='banner--fadeBottom' />
-      </header>
+        <p className='banner__description'>
+          { movie?.overview ? truncate(movie.overview, 100) : ''}
+        </p>
+      </div>
+      <div className='banner--fadeBottom' />
+    </header>
   )
 }
 

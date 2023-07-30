@@ -2,7 +2,9 @@ import { AxiosResponse } from 'axios';
 import axiosInstance from '../instance';
 import type {
   MovieNowPlayingQueryParams,
-  MovieNowPlayingResponse
+  MovieNowPlayingResponse,
+  MovieTopRatedQueryParams,
+  MovieTopRatedResponse,
 } from './types';
 
 const getMovieNowPlayingApi = (
@@ -11,6 +13,13 @@ const getMovieNowPlayingApi = (
   return axiosInstance.get('movie/now_playing', { params });
 }
 
+const getMovieTopRatedApi = (
+  params?: MovieTopRatedQueryParams,
+): Promise<AxiosResponse<MovieTopRatedResponse>> => {
+  return axiosInstance.get('movie/top_rated', { params });
+};
+
 export {
   getMovieNowPlayingApi,
+  getMovieTopRatedApi,
 }

@@ -1,7 +1,10 @@
 import './App.css';
 import styled from 'styled-components';
-import Nav from '@components/molecules/Nav/Nav';
-import Banner from '@components/molecules/Banner/Banner';
+import Nav from '@/components/Nav/Nav';
+import Banner from '@/components/Banner/Banner';
+import Category from '@/components/Category/Category';
+import Row from '@/components/Row/Row';
+import requests from './api/request';
 
 const Container = styled.main`
   position: relative;
@@ -26,6 +29,11 @@ const App = () => {
     <Container>
       <Nav />
       <Banner />
+      <Category />
+      <Row title="Trending Now" id="TN" fetchUrl={requests.fetchTrending} />
+      <Row title="Top Rated" id="TR" fetchUrl={requests.fetchTopRated} />
+      <Row title="Action Movies" id="AM" fetchUrl={requests.fetchActionMovies} />
+      <Row title="Comedy Movies" id="CM" fetchUrl={requests.fetchComedyMovies} />
     </Container>
   );
 }
