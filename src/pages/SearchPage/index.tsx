@@ -2,6 +2,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import './SearchPage.css';
 import React, { useEffect, useState } from 'react'
 import { getSearchMultiApi } from '@/api/search';
+import useDebounce from '@/hooks/useDebounce';
 
 const SearchPage = () => {
   const navigate = useNavigate();
@@ -11,6 +12,7 @@ const SearchPage = () => {
   };
   let query = useQuery();
   const searchTerm = query.get("q");
+  const debouncedSearchTerm = useDebounce(searchTerm, 500);
 
   const fetchSearchMovie = async (searchTerm: string) => {
     try {
@@ -21,10 +23,10 @@ const SearchPage = () => {
     }
   };
   useEffect(() => {
-    if (searchTerm) {
-      fetchSearchMovie(searchTerm);
+    if (debouncedSearchTerm) {
+      fetchSearchMovie(debouncedSearchTerm);
     }
-  }, [searchTerm]);
+  }, [debouncedSearchTerm]);
   
   return (
     <>
