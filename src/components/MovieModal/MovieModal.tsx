@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import './MovieModal.css';
+import useOnClickOutside from '@/hooks/useOnClickOutside';
 
 interface MovieModalProps {
   backdrop_path: string;
@@ -23,6 +24,7 @@ const MovieModal = ({
   setModalOpen
 }: MovieModalProps) => {
   const ref = useRef<HTMLDivElement | null>(null);
+  useOnClickOutside(ref, () => setModalOpen(false));
 
   return (
     <div className='presentation' role="presentation">
